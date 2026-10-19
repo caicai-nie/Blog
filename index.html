@@ -160,6 +160,96 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://caicai-nie.github.io/Blog/2026/10/19/emwin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/avatar1.jpg">
+      <meta itemprop="name" content="狗子">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="007">
+      <meta itemprop="description" content="再换个思路">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 007">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/2026/10/19/emwin/" class="post-title-link" itemprop="url">emwin</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-10-19 23:38:16 / 修改时间：23:45:06" itemprop="dateCreated datePublished" datetime="2026-10-19T23:38:16+08:00">2026-10-19</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="emwin"><a href="#emwin" class="headerlink" title="emwin"></a>emwin</h1><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>下载emwin仿真文件</p>
+<p><img src="/Blog/2026/10/19/emwin/image-20261018165432282.png" alt="image-20261018165432282"></p>
+<p>修改项目属性</p>
+<p><img src="/Blog/2026/10/19/emwin/image-20261018165630654.png" alt="image-20261018165630654"></p>
+<p>1.链接器附件依赖添加   2.忽略默认库：否   3 .忽略特定库LIBC.lib;LIBCMTD.lib</p>
+<p><img src="/Blog/2026/10/19/emwin/image-20261018165643860.png" alt="image-20261018165643860"></p>
+<p>链接器高级设置修改安全异常处理程序：否</p>
+<p><img src="/Blog/2026/10/19/emwin/image-20261018165749925.png" alt="image-20261018165749925"></p>
+<p>然后就可以正常仿真了</p>
+<h2 id="文件介绍"><a href="#文件介绍" class="headerlink" title="文件介绍"></a>文件介绍</h2><p><img src="/Blog/2026/10/19/emwin/image-20261019224905323.png" alt="image-20261019224905323"></p>
+<h2 id="函数讲解"><a href="#函数讲解" class="headerlink" title="函数讲解"></a>函数讲解</h2><h3 id="GUIConf-c"><a href="#GUIConf-c" class="headerlink" title="GUIConf.c"></a>GUIConf.c</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">GUI_ALLOC_AssignMemory</span><span class="params">(aMemory, GUI_NUMBYTES)</span></span>;<span class="comment">//分配4MB空间</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">GUI_ALLOC_SetAvBlockSize</span><span class="params">(GUI_BLOCKSIZE)</span></span>;<span class="comment">//平均大小</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="GUIConf-h"><a href="#GUIConf-h" class="headerlink" title="GUIConf.h"></a>GUIConf.h</h3><p>主要是功能剪裁</p>
+<p><img src="/Blog/2026/10/19/emwin/image-20261019230307869.png" alt="image-20261019230307869"></p>
+<h3 id="LCDConfig-c"><a href="#LCDConfig-c" class="headerlink" title="LCDConfig.c"></a>LCDConfig.c</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">LCD_X_Config</span><span class="params">(<span class="type">void</span>)</span><span class="comment">//</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">LCD_X_DisplayDriver</span><span class="params">(<span class="type">unsigned</span> LayerIndex, <span class="type">unsigned</span> Cmd, <span class="type">void</span> * pData)</span> <span class="comment">//emWin 库的驱动回调函数,主要根据cmd进行操作</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="GUI-Init"><a href="#GUI-Init" class="headerlink" title="GUI_Init"></a>GUI_Init</h3><p>是项目的起点</p>
+<h1 id="sample"><a href="#sample" class="headerlink" title="sample"></a>sample</h1><h2 id="官方案例介绍"><a href="#官方案例介绍" class="headerlink" title="官方案例介绍"></a>官方案例介绍</h2><p><img src="/Blog/2026/10/19/emwin/image-20261019231406633.png" alt="image-20261019231406633"></p>
+<h1 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world!"></a>Hello world!</h1><h2 id="屏蔽官方案例"><a href="#屏蔽官方案例" class="headerlink" title="屏蔽官方案例"></a>屏蔽官方案例</h2><p><img src="/Blog/2026/10/19/emwin/image-20261019231607244.png" alt="image-20261019231607244"></p>
+<h2 id="开启小案例"><a href="#开启小案例" class="headerlink" title="开启小案例"></a>开启小案例</h2><p><img src="/Blog/2026/10/19/emwin/image-20261019231728099.png" alt="image-20261019231728099"></p>
+<p>以上鸣谢野火！！！</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://caicai-nie.github.io/Blog/2026/10/12/%E6%89%93%E5%8F%91%E6%97%B6%E9%97%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -297,87 +387,6 @@
 <h4 id="Blog更新位置"><a href="#Blog更新位置" class="headerlink" title="Blog更新位置"></a>Blog更新位置</h4><p>E:\Blog\source_posts</p>
 <div class="tabs" id="fourth-unique-name"><ul class="nav-tabs"><li class="tab active"><a href="#fourth-unique-name-1">Solution 1</a></li><li class="tab"><a href="#fourth-unique-name-2">Solution 2</a></li><li class="tab"><a href="#fourth-unique-name-3">Solution 3</a></li></ul><div class="tab-content"><div class="tab-pane active" id="fourth-unique-name-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="fourth-unique-name-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-pane" id="fourth-unique-name-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
 
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://caicai-nie.github.io/Blog/2026/10/03/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar1.jpg">
-      <meta itemprop="name" content="狗子">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="007">
-      <meta itemprop="description" content="再换个思路">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 007">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/2026/10/03/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-10-03 23:54:15" itemprop="dateCreated datePublished" datetime="2026-10-03T23:54:15+08:00">2026-10-03</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
     </div>
